@@ -6,6 +6,7 @@ import org.springframework.web.context.annotation.SessionScope;
 @Component
 @SessionScope
 public class TokenContext {
+	
 	private String token;
 
 	public String getToken() {

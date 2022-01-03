@@ -19,16 +19,21 @@ import com.delta.blog.BlogClient.service.CommentService;
 
 @Controller
 public class PublicController {
+	
 	@Autowired
 	private ArticleService articleService;
+	
 	@Autowired
 	private CategoryService categoryService;
+	
 	@Autowired
 	private CommentService commentService;
+	
 	@GetMapping("/")
 	public String getHomePage() {
 		return "HomePage";
 	}
+	
 	@GetMapping("/articles")
 	public String articlesPage(Model model, HttpSession session) {
 		List<Article> articles = articleService.getArticles();
@@ -42,6 +47,7 @@ public class PublicController {
 		model.addAttribute("article", article);
 		return "article";
 	}
+	
 	@GetMapping("/categories")
 	public String categoriesPage(Model model, HttpSession session) {
 		List<Category> categories = categoryService.getCategories();
@@ -55,6 +61,7 @@ public class PublicController {
 		model.addAttribute("category", category);
 		return "category";
 	}
+	
 	@GetMapping("/comments")
 	public String commentsPage(Model model, HttpSession session) {
 		List<Comment> comments = commentService.getComments();

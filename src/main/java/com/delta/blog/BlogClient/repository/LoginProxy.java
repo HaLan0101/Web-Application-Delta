@@ -9,18 +9,20 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
 import com.delta.blog.BlogClient.ApiProperties;
-import com.delta.blog.BlogClient.model.User;
+import com.delta.blog.BlogClient.model.ApiUser;
 
 @Repository
 public class LoginProxy {
+	
 	@Autowired
 	private ApiProperties props;
 	
-	public String login(User user) {
+	public String login(ApiUser user) {
+		
 		RestTemplate restTemplate = new RestTemplate();
 		
-		HttpEntity<User> request = 
-				new HttpEntity<User>(user);
+		HttpEntity<ApiUser> request = 
+				new HttpEntity<ApiUser>(user);
 		
 		ResponseEntity<String> response = restTemplate.exchange(
 				props.getPublicurl() + "/login",
@@ -34,7 +36,7 @@ public class LoginProxy {
 				.get(HttpHeaders.AUTHORIZATION).get(0);
 		System.out.println("Received token is " + token);
 		
-		props.setToken(token);
+		//props.setToken(token);
 		
 		return token;
 	}
