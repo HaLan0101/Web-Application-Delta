@@ -3,6 +3,7 @@ package com.delta.blog.BlogClient.model;
 
 public class Category {
 	private Integer id;
+	private String name;
 	public Integer getId() {
 		return id;
 	}
@@ -15,5 +16,4 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
-	private String name;
 }

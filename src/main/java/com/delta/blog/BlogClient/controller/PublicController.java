@@ -25,6 +25,10 @@ public class PublicController {
 	private CategoryService categoryService;
 	@Autowired
 	private CommentService commentService;
+	@GetMapping("/")
+	public String getHomePage() {
+		return "HomePage";
+	}
 	@GetMapping("/articles")
 	public String articlesPage(Model model, HttpSession session) {
 		List<Article> articles = articleService.getArticles();

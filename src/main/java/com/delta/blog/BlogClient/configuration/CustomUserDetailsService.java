@@ -23,13 +23,13 @@ public class CustomUserDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
 		com.delta.blog.BlogClient.model.User user = new com.delta.blog.BlogClient.model.User();
-		user.setAuthor_name("Yaya");
-		user.setPassword("test");
+		user.setAuthor_name("Jinx");
+		user.setPassword("password");
 		loginService.login(user);
 		
 		User webUser = new User(
-				"Yaya", 
-				new BCryptPasswordEncoder().encode("test"),
+				"jinx", 
+				new BCryptPasswordEncoder().encode("jinx"),
 				getGrantedAuthorities());
 		return webUser;
 	}
