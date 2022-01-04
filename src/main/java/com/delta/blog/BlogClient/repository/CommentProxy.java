@@ -56,7 +56,7 @@ public class CommentProxy {
 		
 		ResponseEntity<List<Comment>> response =
 				restTemplate.exchange(
-						props.getUrl() + "/comments", 
+						props.getPublicurl() + "/comments", 
 						HttpMethod.GET, 
 						new HttpEntity<>(createTokenHeaders()), 
 						new ParameterizedTypeReference<List<Comment>>() {}
@@ -69,7 +69,7 @@ public class CommentProxy {
 		
 		ResponseEntity<Comment> response =
 				restTemplate.exchange(
-						props.getUrl() + "/comment/" + id, 
+						props.getPublicurl() + "/comment/" + id, 
 						HttpMethod.GET, 
 						new HttpEntity<>(createTokenHeaders()), 
 						Comment.class);

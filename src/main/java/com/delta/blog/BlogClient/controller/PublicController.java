@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.delta.blog.BlogClient.model.Article;
 import com.delta.blog.BlogClient.model.Category;
@@ -18,6 +19,7 @@ import com.delta.blog.BlogClient.service.CategoryService;
 import com.delta.blog.BlogClient.service.CommentService;
 
 @Controller
+@RequestMapping("public")
 public class PublicController {
 	@Autowired
 	private ArticleService articleService;
@@ -25,10 +27,6 @@ public class PublicController {
 	private CategoryService categoryService;
 	@Autowired
 	private CommentService commentService;
-	@GetMapping("/")
-	public String getHomePage() {
-		return "HomePage";
-	}
 	@GetMapping("/articles")
 	public String articlesPage(Model model, HttpSession session) {
 		List<Article> articles = articleService.getArticles();

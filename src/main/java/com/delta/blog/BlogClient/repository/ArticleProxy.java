@@ -56,7 +56,7 @@ public class ArticleProxy {
 		
 		ResponseEntity<List<Article>> response =
 				restTemplate.exchange(
-						props.getUrl() + "/articles", 
+						props.getPublicurl() + "/articles", 
 						HttpMethod.GET, 
 						new HttpEntity<>(createTokenHeaders()), 
 						new ParameterizedTypeReference<List<Article>>() {}
@@ -69,7 +69,7 @@ public class ArticleProxy {
 		
 		ResponseEntity<Article> response =
 				restTemplate.exchange(
-						props.getUrl() + "/article/" + id, 
+						props.getPublicurl() + "/article/" + id, 
 						HttpMethod.GET, 
 						new HttpEntity<>(createTokenHeaders()), 
 						Article.class);

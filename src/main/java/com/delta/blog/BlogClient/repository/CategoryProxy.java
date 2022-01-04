@@ -56,7 +56,7 @@ public class CategoryProxy {
 		
 		ResponseEntity<List<Category>> response =
 				restTemplate.exchange(
-						props.getUrl() + "/categories", 
+						props.getPublicurl() + "/categories", 
 						HttpMethod.GET, 
 						new HttpEntity<>(createTokenHeaders()), 
 						new ParameterizedTypeReference<List<Category>>() {}
@@ -69,7 +69,7 @@ public class CategoryProxy {
 		
 		ResponseEntity<Category> response =
 				restTemplate.exchange(
-						props.getUrl() + "/category/" + id, 
+						props.getPublicurl() + "/category/" + id, 
 						HttpMethod.GET, 
 						new HttpEntity<>(createTokenHeaders()), 
 						Category.class);

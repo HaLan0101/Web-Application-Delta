@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Article list </title>
+</head>
+<body>
+		List of articles
+	
+	<table>
+		<thead>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Author's name</th>
+			<th>Content</th>
+			<th>Date</th>
+		</thead>
+		<tbody>
+				<td><span th:text="${articles[0].id}"/></td>
+				<td><span th:text="${articles[0].title}"/></td>
+				<td><span th:text="${articles[0].author_name}"/></td>
+				<td><span th:text="${articles[0].content}"/></td>
+				<td><span th:text="${articles[0].date}"/></td>
+				
+		
+		</tbody>
+	</table>
+</body>
+</html>

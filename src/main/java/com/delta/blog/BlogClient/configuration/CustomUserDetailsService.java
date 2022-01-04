@@ -28,8 +28,8 @@ public class CustomUserDetailsService implements UserDetailsService{
 		loginService.login(user);
 		
 		User webUser = new User(
-				"jinx", 
-				new BCryptPasswordEncoder().encode("jinx"),
+				"yaya", 
+				new BCryptPasswordEncoder().encode("yaya"),
 				getGrantedAuthorities());
 		return webUser;
 	}
